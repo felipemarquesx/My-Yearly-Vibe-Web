@@ -1,16 +1,3 @@
-// 💡 Por que estamos usando dados locais (MOCK) em vez de uma API real?
-//
-// Pense em uma apresentação ao vivo como uma peça de teatro. Se você depender de uma
-// API externa (como o Spotify), é como depender que a companhia de energia elétrica não 
-// falhe no meio do seu show. Se a internet cair ou a chave da API expirar, seu sistema quebra.
-// 
-// Usar um "Mock" (um dublê de dados) garante que sua apresentação seja 100% à prova de falhas,
-// rodando totalmente isolada e offline. É uma estratégia madura de engenharia para criar
-// protótipos seguros e previsíveis.
-
-// 1. O Molde (Interface)
-// Pense na Interface como uma "Forma de Bolo". Ela diz exatamente quais 
-// ingredientes cada música precisa ter para existir no nosso sistema.
 export interface Musica {
   id: number;
   nome: string;
