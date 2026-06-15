@@ -3,7 +3,6 @@ import { musicData, type Musica } from './data/musicData';
 import dacingGif from './assets/dacing.gif';
 import iconePage from './assets/icon.ico';
 
-// Componente de Avaliação (Estrelas) - Versão Premium ✨
 const StarRating = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
