@@ -39,7 +39,7 @@ function App() {
 
       <header className="text-center pt-5 pb-4 position-relative">
         {/* Área de Configurações no canto superior esquerdo */}
-        <div className="position-absolute top-0 start-0 mt-3 ms-4">
+        <div className="position-absolute top-0 start-0 mt-2 mt-md-3 ms-2 ms-md-4">
           <button
             className="btn btn-link p-2 border-0 shadow-none"
             style={{
@@ -67,10 +67,49 @@ function App() {
           </button>
         </div>
 
-        {/* Área de Login no canto superior direito */}
-        <div className="position-absolute top-0 end-0 mt-3 me-4" style={{ zIndex: 10 }}>
+        {/* Área Social e de Login no canto superior direito */}
+        <div className="position-absolute top-0 end-0 mt-3 me-4 d-flex align-items-center gap-3" style={{ zIndex: 10 }}>
+
+          {/* Campo de Busca de Amigos (aparece apenas se estiver conectado) */}
+          {conectado && (
+            <div className="position-relative d-none d-md-block">
+              <style>
+                {`
+                  .input-busca-amigos::placeholder {
+                    color: rgba(255, 255, 255, 0.6) !important;
+                  }
+                `}
+              </style>
+              <input
+                type="text"
+                className="form-control rounded-pill shadow-sm input-busca-amigos"
+                placeholder="Procurar perfil de amigos..."
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  color: 'var(--cor-texto-claro)',
+                  fontSize: '0.85rem',
+                  paddingRight: '2.5rem',
+                  width: '240px',
+                  transition: 'all 0.3s ease'
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
+                }}
+              />
+              <svg className="position-absolute top-50 end-0 translate-middle-y me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--cor-texto-suave)', pointerEvents: 'none' }}>
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+          )}
+
           <button
-            className="btn rounded-pill px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
+            className="btn rounded-pill px-3 px-sm-4 py-2 d-flex align-items-center gap-2 shadow-sm"
             style={{
               backgroundColor: 'rgba(255, 255, 255, 0.03)',
               border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -88,7 +127,7 @@ function App() {
             onClick={() => setConectado(!conectado)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <span className="fw-medium">{conectado ? 'Felipe Marques' : 'Fazer Login'}</span>
+            <span className="fw-medium d-none d-sm-inline">{conectado ? 'Felipe Marques' : 'Fazer Login'}</span>
           </button>
         </div>
 
@@ -98,7 +137,7 @@ function App() {
             MusicEra
           </h1>
         </div>
-        <div className="mx-auto" style={{ width: '335px', height: '3px', backgroundColor: '#c8a2c8', borderRadius: '2px', marginTop: '-0px', boxShadow: '0 3px 8px rgba(200, 162, 200, 0.5)' }}></div>
+        <div className="mx-auto" style={{ width: '335px', maxWidth: '90%', height: '3px', backgroundColor: '#c8a2c8', borderRadius: '2px', marginTop: '-0px', boxShadow: '0 3px 8px rgba(200, 162, 200, 0.5)' }}></div>
         <p className="lead mt-3" style={{ color: 'var(--cor-texto-suave)' }}>
           Registre e explore os sons que marcaram cada fase da sua vida.       </p>
       </header>

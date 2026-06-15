@@ -1,8 +1,8 @@
-# 🎵 MusicEra (Projeto AV2 - Códigos de Alta Performance)
+# 🎵 MusicEra - O seu "Letterboxd" de Músicas
 
 Este repositório contém o **MusicEra**, um projeto (MVP/POC) desenvolvido para a avaliação AV2 da disciplina de Códigos de Alta Performance.
 
-O objetivo do projeto é apresentar um catálogo musical interativo, com foco na experiência do usuário e na entrega de uma aplicação ágil e de fácil execução. A plataforma permite a navegação por décadas e gêneros musicais, fornecendo curiosidades sobre as faixas e integração direta com o YouTube para reprodução.
+O objetivo do projeto é apresentar um catálogo musical interativo (uma espécie de *Letterboxd* para músicas), com foco na experiência do usuário e na entrega de uma aplicação ágil e de fácil execução. A plataforma permite a navegação por décadas e gêneros musicais, fornecendo curiosidades sobre as faixas, integração direta com o YouTube para reprodução e um espaço para você registrar memórias sobre as músicas.
 
 ## 🚀 Requisitos e Arquitetura
 
