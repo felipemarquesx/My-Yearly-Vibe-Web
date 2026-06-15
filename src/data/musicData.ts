@@ -21,7 +21,7 @@ export const musicData: Musica[] = [
 
   // ==================== MPB ====================
   {
-    id: 11, nome: "Superman", artista: "Banda Vingadora", ano: 2015, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/neCHgpb.jpeg", link: "https://www.youtube.com/watch?v=YzCoZGsod0c&list=RDYzCoZGsod0c&start_radio=1&pp=ygUMTUVUUkFMSEFET1JBoAcB",
+    id: 11, nome: "Metralhadora", artista: "Banda Vingadora", ano: 2015, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/neCHgpb.jpeg", link: "https://www.youtube.com/watch?v=YzCoZGsod0c&list=RDYzCoZGsod0c&start_radio=1&pp=ygUMTUVUUkFMSEFET1JBoAcB",
     curiosidade: "Liniker fez história no Grammy Latino com seu estilo que mistura MPB e Soul."
   },
   {

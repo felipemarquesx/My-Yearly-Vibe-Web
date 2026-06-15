@@ -3,6 +3,48 @@ import { musicData, type Musica } from './data/musicData';
 import dacingGif from './assets/dacing.gif';
 import iconePage from './assets/icon.ico';
 
+// Componente de Avaliação (Estrelas) - Versão Premium ✨
+const StarRating = () => {
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
+
+  return (
+    <div 
+      className="d-flex gap-1 mb-2 mt-1" 
+      onClick={(e) => e.stopPropagation()} 
+    >
+      {[1, 2, 3, 4, 5].map((star) => {
+        const isAtivo = star <= (hover || rating);
+        return (
+          <svg
+            key={star}
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill={isAtivo ? "#fbbf24" : "rgba(255, 255, 255, 0.08)"}
+            stroke={isAtivo ? "#fbbf24" : "rgba(255, 255, 255, 0.15)"}
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ 
+              cursor: "pointer", 
+              transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+              transform: star <= hover ? "scale(1.15)" : "scale(1)",
+              filter: isAtivo ? "drop-shadow(0 0 5px rgba(251, 191, 36, 0.5))" : "none"
+            }}
+            onClick={() => setRating(star)}
+            onMouseEnter={() => setHover(star)}
+            onMouseLeave={() => setHover(0)}
+          >
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        );
+      })}
+    </div>
+  );
+};
+
 function App() {
   const [generoSelecionado, setGeneroSelecionado] = useState('');
   const [musicaAtiva, setMusicaAtiva] = useState<Musica | null>(null);
@@ -316,9 +358,11 @@ function App() {
                     <h5 className="card-title fw-bold text-truncate mb-1" style={{ color: 'var(--cor-texto-claro)' }} title={tituloDaMusica}>
                       {tituloDaMusica}
                     </h5>
-                    <p className="card-text text-truncate mb-3" style={{ color: 'var(--cor-primaria)' }} title={musica.artista}>
+                    <p className="card-text text-truncate mb-2" style={{ color: 'var(--cor-primaria)' }} title={musica.artista}>
                       {musica.artista}
                     </p>
+
+                    <StarRating />
 
                     <div className="d-flex align-items-center gap-2 mt-auto">
                       <span className="badge rounded-pill etiqueta-genero">
