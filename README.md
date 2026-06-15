@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# 🎵 MusicEra (Projeto AV2 - Códigos de Alta Performance)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém o **MusicEra**, um projeto (MVP/POC) desenvolvido para a avaliação AV2 da disciplina de Códigos de Alta Performance.
 
-Currently, two official plugins are available:
+O objetivo do projeto é apresentar um catálogo musical interativo, com foco na experiência do usuário e na entrega de uma aplicação ágil e de fácil execução. A plataforma permite a navegação por décadas e gêneros musicais, fornecendo curiosidades sobre as faixas e integração direta com o YouTube para reprodução.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Requisitos e Arquitetura
 
-## React Compiler
+O desenvolvimento do projeto seguiu rigorosamente os requisitos estabelecidos para a avaliação:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend com React e Vite:** Utilização do React para a criação de uma interface baseada em componentes, garantindo modularidade e performance.
+- **Estilização com Bootstrap 5:** Adoção do Bootstrap 5 como framework CSS base, aliado a estilizações customizadas para definir a identidade visual e garantir a responsividade.
+- **Arquitetura (MVC / 3 Camadas):** Implementação baseada em separação de responsabilidades. A aplicação conta com camadas lógicas de visualização (componentes React), controle e dados. Para assegurar a estabilidade durante a apresentação e eliminar a dependência de APIs externas, foram utilizados **dados mockados** (`musicData.ts`), atuando de forma equivalente à nossa camada de Model.
+- **Infraestrutura com Docker:** O projeto foi totalmente conteinerizado utilizando Docker, garantindo um ambiente isolado, reprodutível e independente da máquina local.
+- **Controle de Versão e Colaboração:** O código-fonte foi versionado no GitHub, com colaboração ativa da equipe e adoção de um padrão rigoroso de commits convencionais.
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
+- React (TypeScript) + Vite
+- Bootstrap 5
+- Docker
+- Git / GitHub
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🐳 Como executar a aplicação via Docker
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Siga as instruções abaixo para inicializar a aplicação via contêiner:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Certifique-se de que o Docker esteja instalado e em execução no seu ambiente.
+2. Clone este repositório e acesse a pasta raiz do projeto via terminal.
+3. Construa a imagem Docker com o comando:
+   ```bash
+   docker build -t ots-web .
+   ```
+4. Inicie o contêiner mapeando a porta 8080:
+   ```bash
+   docker run -d -p 8080:80 --name musicera-app ots-web
+   ```
+5. Acesse a aplicação no navegador através do endereço: `http://localhost:8080`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+*(Para interromper e remover o contêiner posteriormente, utilize: `docker stop musicera-app && docker rm musicera-app`)*
+
+## 💻 Como executar localmente (Ambiente de Desenvolvimento)
+
+Para executar o projeto localmente via Node.js:
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📝 Padrão de Commits
+Pra não virar bagunça e seguir as boas práticas de colaboração que o professor pediu no GitHub, a gente tá usando o esquema de Commits Convencionais. Sempre que for enviar algo, usa essas tags antes da mensagem:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `feat:` Quando criar uma funcionalidade nova
+- `fix:` Quando resolver algum bug ou erro
+- `refactor:` Pra quando melhorar o código sem mudar o que ele faz (tipo dar uma organizada)
+- `style:` Quando mexer no visual ou formatação
+- `docs:` Pra atualizar documentação (como esse README)
+- `test:` Pra mexer na parte de testes
+- `chore:` Pra tarefas gerais (atualizar pacotes, Docker, etc)
