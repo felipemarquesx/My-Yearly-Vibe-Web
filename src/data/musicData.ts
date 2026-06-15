@@ -5,7 +5,7 @@ export interface Musica {
   ano: number;
   epoca: string;
   genero: string;
-  tipoArtista: string; // Homem, Mulher, Boygroup, Girlgroup
+  tipoArtista: string; // Homem, Mulher, Boygroup, Girlgroup, Banda
   urlImagem: string;
   curiosidade: string;
   link: string;
@@ -14,143 +14,46 @@ export interface Musica {
 export const musicData: Musica[] = [
   // ==================== FUNK ====================
   {
-    id: 43, nome: "Música Genérica", artista: "Artista Genérico", ano: 2019, epoca: "Anos 2010", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
+    id: 43, nome: "Mc Sapão", artista: " Mc sapão", ano: 2006, epoca: "Anos 2010", genero: "Funk", tipoArtista: "Homem", urlImagem: "https://i.imgur.com/nbYxqLo.jpeg", link: "https://www.youtube.com/watch?v=JtWJYmHDDi8&list=RDJtWJYmHDDi8&start_radio=1&pp=ygUQZXUgdG8gdHJhbnF1aWxhb6AHAQ%3D%3D",
     curiosidade: "Música adicionada como placeholder para o ano de 2019."
   },
-  {
-    id: 1, nome: "Oh Juliana", artista: "MC Niack", ano: 2020, epoca: "Anos 2020", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Foi um dos maiores virais do TikTok no Brasil durante o período de isolamento."
-  },
-  {
-    id: 2, nome: "Bipolar", artista: "MC Don Juan", ano: 2021, epoca: "Anos 2020", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "A batida misturou funk com elementos que depois influenciariam o mandelão."
-  },
-  {
-    id: 3, nome: "Tubarão Te Amo", artista: "MC Ryan SP", ano: 2022, epoca: "Anos 2020", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "A dancinha da música quebrou as fronteiras do Brasil e foi parar em redes sociais gringas."
-  },
-  {
-    id: 4, nome: "Tá OK", artista: "MC Kevin o Chris e Dennis DJ", ano: 2023, epoca: "Anos 2020", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "O hit reviveu a estética do funk tamborzão dos anos 2000."
-  },
-  {
-    id: 5, nome: "Let's Go 4", artista: "MC Ig e MC Ryan SP", ano: 2024, epoca: "Anos 2020", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "O projeto 'Let's Go' se tornou uma das maiores franquias de sucesso do funk paulista."
-  },
-  {
-    id: 6, nome: "Vem de Nave", artista: "MC PH", ano: 2025, epoca: "Anos 2020", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "MC PH consolidou a cena do 'funk consciente ostentação' no topo das paradas."
-  },
-  {
-    id: 7, nome: "Giro Louco", artista: "MC Hariel", ano: 2026, epoca: "Anos 2020", genero: "Funk", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Hariel comemorou uma década de sucessos ininterruptos com este lançamento."
-  },
+
 
   // ==================== MPB ====================
   {
-    id: 44, nome: "Música Genérica", artista: "Artista Genérico", ano: 2019, epoca: "Anos 2010", genero: "MPB", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Música adicionada como placeholder para o ano de 2019."
-  },
-  {
-    id: 8, nome: "Talvez", artista: "Caetano Veloso", ano: 2020, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Gravada em casa, trouxe um respiro acústico para os fãs da MPB tradicional."
-  },
-  {
-    id: 9, nome: "Calma", artista: "Marisa Monte", ano: 2021, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "Marcou o aguardado retorno da cantora com um álbum de inéditas após anos."
-  },
-  {
-    id: 10, nome: "Várias Queixas", artista: "Gilsons", ano: 2022, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Boygroup", urlImagem: "", link: "",
-    curiosidade: "O trio, formado por filho e netos de Gilberto Gil, trouxe o tempero baiano para a nova MPB."
-  },
-  {
-    id: 11, nome: "Tudo", artista: "Liniker", ano: 2023, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Mulher", urlImagem: "", link: "",
+    id: 11, nome: "Superman", artista: "Banda Vingadora", ano: 2015, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/neCHgpb.jpeg", link: "https://www.youtube.com/watch?v=YzCoZGsod0c&list=RDYzCoZGsod0c&start_radio=1&pp=ygUMTUVUUkFMSEFET1JBoAcB",
     curiosidade: "Liniker fez história no Grammy Latino com seu estilo que mistura MPB e Soul."
   },
   {
-    id: 12, nome: "Alinhamento Milenar", artista: "Jão", ano: 2024, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Jão lotou estádios no Brasil inteiro com a super turnê do álbum 'SUPER'."
+    id: 11, nome: "Superman", artista: "LevaNóiz", ano: 2011, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/Zq78GQR.jpeg", link: "https://www.youtube.com/watch?v=1RfA2sEXPIA&list=RD1RfA2sEXPIA&start_radio=1&pp=ygUVZm9nZSBtdWxoZXIgbWFyYXZpbGhhoAcB",
+    curiosidade: "Liniker fez história no Grammy Latino com seu estilo que mistura MPB e Soul."
   },
   {
-    id: 13, nome: "Partilhar", artista: "Rubel", ano: 2025, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "A canção virou um hino indie, sendo tocada em inúmeros casamentos pelo Brasil."
+    id: 11, nome: "Acontecimentos", artista: "Marisa Monte", ano: 2017, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/vwQKmM8.jpeg", link: "https://www.youtube.com/watch?v=O3WOEOAqsG4&list=RDO3WOEOAqsG4&start_radio=1&pp=ygUNQWNvbnRlY2ltZW50b6AHAQ%3D%3D",
+    curiosidade: "Liniker fez história no Grammy Latino com seu estilo que mistura MPB e Soul."
   },
   {
-    id: 14, nome: "Dança dos Ventos", artista: "Marina Sena", ano: 2026, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Mulher", urlImagem: "", link: "",
+
+    id: 44, nome: "Meu abrigo ", artista: "Melim", ano: 2019, epoca: "Anos 2010", genero: "MPB", tipoArtista: "Homem", urlImagem: "https://i.imgur.com/IlglKcC.jpeg", link: "https://www.youtube.com/watch?v=gUpGTRR4Tt4&list=RDgUpGTRR4Tt4&start_radio=1&pp=ygURbWV1IGFicmlnw7MgbWVsaW2gBwHSBwkJPgsBhyohjO8%3D",
+    curiosidade: "Música adicionada como placeholder para o ano de 2019."
+  },
+  {
+    id: 9, nome: "Zap Zum", artista: "Pabllo Vitta", ano: 2021, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/OZKW9hw.jpeg", link: "https://www.youtube.com/watch?v=Fepa9dKg7N4&list=RDFepa9dKg7N4&start_radio=1",
+    curiosidade: "Marcou o aguardado retorno da cantora com um álbum de inéditas após anos."
+  },
+  {
+    id: 10, nome: "Várias Queixas", artista: "Gilsons", ano: 2022, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Boygroup", urlImagem: "https://i.imgur.com/wjuJ7MQ.jpeg", link: "https://www.youtube.com/watch?v=bBHPq3UQFsw&list=RDbBHPq3UQFsw&start_radio=1&pp=ygUXdmFyaWFzIHF1ZWl4YXMgZGUgdm9jw6qgBwE%3D",
+    curiosidade: "O trio, formado por filho e netos de Gilberto Gil, trouxe o tempero baiano para a nova MPB."
+  },
+
+  {
+    id: 14, nome: "Carnaval", artista: "Marina Sena", ano: 2025, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/1Q6MxxO.jpeg", link: "https://www.youtube.com/watch?v=mwg0izESzgg&list=RDmwg0izESzgg&start_radio=1&pp=ygUIY2FybmF2YWygBwE%3D",
     curiosidade: "Misturando ritmos regionais com pop, Marina Sena se consagrou na nova geração."
-  },
-
-  // ==================== GOSPEL ====================
-  {
-    id: 45, nome: "Música Genérica", artista: "Artista Genérico", ano: 2019, epoca: "Anos 2010", genero: "Gospel", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Música adicionada como placeholder para o ano de 2019."
-  },
-  {
-    id: 15, nome: "Lugar Secreto", artista: "Gabriela Rocha", ano: 2020, epoca: "Anos 2020", genero: "Gospel", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "Uma das músicas cristãs mais tocadas da década nas plataformas digitais."
-  },
-  {
-    id: 16, nome: "Alívio", artista: "Jessé Aguiar", ano: 2021, epoca: "Anos 2020", genero: "Gospel", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "A canção furou a bolha do gospel e emocionou pessoas de diversas crenças."
-  },
-  {
-    id: 17, nome: "Deserto", artista: "Maria Marçal", ano: 2022, epoca: "Anos 2020", genero: "Gospel", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "Cantada por uma adolescente, a música viralizou de forma absurda no YouTube e TikTok."
-  },
-  {
-    id: 18, nome: "Bênçãos Que Não Têm Fim", artista: "Isadora Pompeo", ano: 2023, epoca: "Anos 2020", genero: "Gospel", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "A faixa dominou não apenas as rádios gospel, mas também figurou no Top 50 geral do Spotify Brasil."
-  },
-  {
-    id: 19, nome: "Eu Sou Teu Pai", artista: "Valesca Mayssa", ano: 2024, epoca: "Anos 2020", genero: "Gospel", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "Um dos maiores fenômenos de coral e adoração gravados ao vivo nesse ano."
-  },
-  {
-    id: 20, nome: "Fogo Santo", artista: "Aline Barros", ano: 2025, epoca: "Anos 2020", genero: "Gospel", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "Aline reafirmou seu pioneirismo trazendo inovações de produção pop para o gospel."
-  },
-  {
-    id: 21, nome: "Apenas Um Toque", artista: "Theo Rubia", ano: 2026, epoca: "Anos 2020", genero: "Gospel", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Música caracterizada por longos momentos de adoração espontânea nos cultos."
-  },
-
-  // ==================== SERTANEJO ====================
-  {
-    id: 46, nome: "Música Genérica", artista: "Artista Genérico", ano: 2019, epoca: "Anos 2010", genero: "Sertanejo", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Música adicionada como placeholder para o ano de 2019."
-  },
-  {
-    id: 22, nome: "A Gente Fez Amor", artista: "Gusttavo Lima", ano: 2020, epoca: "Anos 2020", genero: "Sertanejo", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "O 'Embaixador' bateu todos os recordes de acessos simultâneos durante a pandemia."
-  },
-  {
-    id: 23, nome: "Batom de Cereja", artista: "Israel & Rodolffo", ano: 2021, epoca: "Anos 2020", genero: "Sertanejo", tipoArtista: "Boygroup", urlImagem: "", link: "",
-    curiosidade: "O sucesso foi alavancado pela participação de Rodolffo em um famoso reality show de TV."
-  },
-  {
-    id: 24, nome: "Arranhão", artista: "Henrique & Juliano", ano: 2022, epoca: "Anos 2020", genero: "Sertanejo", tipoArtista: "Boygroup", urlImagem: "", link: "",
-    curiosidade: "Uma das duplas que mais arrastou multidões no formato 'Sertanejo Premium'."
-  },
-  {
-    id: 25, nome: "Nosso Quadro", artista: "Ana Castela", ano: 2023, epoca: "Anos 2020", genero: "Sertanejo", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "A 'Boiadeira' liderou a revolução do movimento Agroplay no Brasil."
-  },
-  {
-    id: 26, nome: "Escrito nas Estrelas", artista: "Lauana Prado", ano: 2024, epoca: "Anos 2020", genero: "Sertanejo", tipoArtista: "Mulher", urlImagem: "", link: "",
-    curiosidade: "Uma regravação com pegada sertaneja raiz que estourou após viralizar nas redes sociais."
-  },
-  {
-    id: 27, nome: "Barulho do Foguete", artista: "Zé Neto & Cristiano", ano: 2025, epoca: "Anos 2020", genero: "Sertanejo", tipoArtista: "Boygroup", urlImagem: "", link: "",
-    curiosidade: "Música que reforçou a identidade de 'sofrência com modão' da dupla."
-  },
-  {
-    id: 28, nome: "Roça no Topo", artista: "Luan Pereira", ano: 2026, epoca: "Anos 2020", genero: "Sertanejo", tipoArtista: "Homem", urlImagem: "", link: "",
-    curiosidade: "Mistura imbatível de funk de interior com sertanejo de paredão."
   },
 
   // ==================== POP ====================
   {
-    id: 47, nome: "Música Genérica", artista: "Artista Genérico", ano: 2019, epoca: "Anos 2010", genero: "Pop", tipoArtista: "Homem", urlImagem: "", link: "",
+    id: 47, nome: "7 rings", artista: "Ariana Grande", ano: 2019, epoca: "Anos 2010", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/BAPLERL.png", link: "https://www.youtube.com/watch?v=QYh6mYIJG2Y&list=RDQYh6mYIJG2Y&start_radio=1&pp=ygUHNyBSSU5HU6AHAQ%3D%3D",
     curiosidade: "Música adicionada como placeholder para o ano de 2019."
   },
   {
@@ -158,45 +61,45 @@ export const musicData: Musica[] = [
     curiosidade: "Passou mais de um ano inteiro no Top 10 da Billboard."
   },
   {
-    id: 30, nome: "Levitating", artista: "Dua Lipa", ano: 2021, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "", link: "",
+    id: 30, nome: "Good 4 U", artista: " Olivia Rodrigo", ano: 2021, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/nYFVzWk.jpeg", link: "https://www.youtube.com/watch?v=gNi_6U5Pm_o&list=RDgNi_6U5Pm_o&start_radio=1&pp=ygUIZ29vZCA0IHWgBwE%3D",
     curiosidade: "O hino das pistas de dança responsável pelo revival da música disco."
   },
   {
-    id: 31, nome: "As It Was", artista: "Harry Styles", ano: 2022, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Homem", urlImagem: "", link: "",
+    id: 31, nome: "As It Was", artista: "Harry Styles", ano: 2022, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Homem", urlImagem: "https://i.imgur.com/xfyqnfW.jpeg", link: "https://www.youtube.com/watch?v=H5v3kku4y6Q&list=RDH5v3kku4y6Q&start_radio=1&pp=ygUWYXMgaXQgd2FzIGhhcnJ5IHN0eWxlc6AHAQ%3D%3D",
     curiosidade: "Foi a música mais ouvida do ano no Spotify globalmente."
   },
   {
-    id: 32, nome: "Flowers", artista: "Miley Cyrus", ano: 2023, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "", link: "",
+    id: 32, nome: "Greedy", artista: "Tate McRae", ano: 2023, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/t7WiPxh.jpeg", link: "https://www.youtube.com/watch?v=To4SWGZkEPk&list=RDTo4SWGZkEPk&start_radio=1",
     curiosidade: "Lançada estrategicamente no dia do aniversário de seu ex-marido."
   },
   {
-    id: 33, nome: "Espresso", artista: "Sabrina Carpenter", ano: 2024, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "", link: "",
+    id: 33, nome: "Espresso", artista: "Sabrina Carpenter", ano: 2024, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/juCGV31.jpeg", link: "https://www.youtube.com/watch?v=eVli-tstM5E&list=RDeVli-tstM5E&start_radio=1&pp=ygUHZXNwcmVzb6AHAQ%3D%3D",
     curiosidade: "A batida viciante transformou Sabrina de ex-estrela teen em ícone pop absoluto."
   },
   {
-    id: 34, nome: "Die With A Smile", artista: "Lady Gaga", ano: 2025, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "", link: "",
+    id: 34, nome: "Gnarly", artista: "Katseye", ano: 2025, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/4oFeFT7.jpeg", link: "https://www.youtube.com/watch?v=PkMKJEkE8Mo&list=RDPkMKJEkE8Mo&start_radio=1",
     curiosidade: "A potência vocal inegável provou que os duetos dramáticos sempre terão espaço."
   },
   {
-    id: 35, nome: "Midnight Spark", artista: "Taylor Swift", ano: 2026, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "", link: "",
+    id: 35, nome: "The Subway", artista: "Chappell Roan", ano: 2026, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/mAklS8d.png", link: "https://www.youtube.com/watch?v=woLfAvD5iXI&list=RDwoLfAvD5iXI&start_radio=1&pp=ygUNY2hhcHBlbGwgcm9hbqAHAQ%3D%3D",
     curiosidade: "Lançamento surpresa que quebrou as plataformas de streaming nas primeiras horas."
   },
 
   // ==================== K-POP ====================
   {
-    id: 48, nome: "Música Genérica", artista: "Artista Genérico", ano: 2019, epoca: "Anos 2010", genero: "K-Pop", tipoArtista: "Homem", urlImagem: "", link: "",
+    id: 48, nome: "Feel Special", artista: "Twice", ano: 2019, epoca: "Anos 2010", genero: "K-Pop", tipoArtista: "Homem", urlImagem: "https://i.imgur.com/YfRwX4M.png", link: "https://www.youtube.com/watch?v=3ymwOvzhwHs&list=RDATg0XdVafkZ2lybCBncm91cA&start_radio=1",
     curiosidade: "Música adicionada como placeholder para o ano de 2019."
   },
   {
-    id: 36, nome: "I Can't Stop Me", artista: "Twice", ano: 2020, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/gjTwfD8.png", link: "https://www.youtube.com/watch?v=CM4CkVFmTds&list=RDCM4CkVFmTds&start_radio=1",
+    id: 36, nome: "Wannabe'", artista: "Itzy", ano: 2020, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/yatbbRW.jpeg", link: "https://www.youtube.com/watch?v=fE2h3lGlOsk&list=RDfE2h3lGlOsk&start_radio=1",
     curiosidade: "A estética anos 80 da música conquistou o mercado ocidental de vez."
   },
   {
-    id: 37, nome: "In the morning", artista: "Itzy", ano: 2021, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/F5Xfg7z.jpeg", link: "https://www.youtube.com/watch?v=_ysomCGaZLw&list=RD_ysomCGaZLw&start_radio=1",
+    id: 37, nome: "Thunderous", artista: "Stray Kids", ano: 2021, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Boygroup", urlImagem: "https://i.imgur.com/sXfVpAi.jpeg", link: "https://www.youtube.com/watch?v=EaswWiwMVs8&list=RDEaswWiwMVs8&start_radio=1&pp=ygUPc3RyYXkga2lkcyAyMDIxoAcB",
     curiosidade: "Coreografia com conceito 'máfia' que virou desafio obrigatório no TikTok K-Pop."
   },
   {
-    id: 38, nome: "MANIAC", artista: "Stray Kids", ano: 2022, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Boygroup", urlImagem: "https://i.imgur.com/zOUBEFc.jpeg", link: "https://www.youtube.com/watch?v=OvioeS1ZZ7o&list=RDOvioeS1ZZ7o&start_radio=1",
+    id: 38, nome: "Love Dive", artista: "IVE", ano: 2022, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/IgdngVq.png", link: "https://www.youtube.com/watch?v=Y8JFxS1HlDo&list=RDY8JFxS1HlDo&start_radio=1&pp=ygUJbG92ZSBkaXZloAcB",
     curiosidade: "Grupo conhecido por compor e produzir 100% de suas próprias músicas."
   },
   {
@@ -204,11 +107,11 @@ export const musicData: Musica[] = [
     curiosidade: "Mudou a indústria sul-coreana ao popularizar o estilo Y2K (anos 2000) e vocais suaves."
   },
   {
-    id: 40, nome: "Supernova", artista: "aespa", ano: 2024, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/7g2ENfn.jpeg", link: "https://www.youtube.com/watch?v=phuiiNCxRMg&list=RDphuiiNCxRMg&start_radio=1&pp=ygUJU1VQRVJOT1ZBoAcB0gcJCToLAYcqIYzv",
+    id: 40, nome: "Magnetic", artista: "ILLIT", ano: 2024, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/tCzpBQJ.jpeg", link: "https://www.youtube.com/watch?v=Vk5-c_v4gMU&list=RDVk5-c_v4gMU&start_radio=1&pp=0gcJCfMCOCosWNin",
     curiosidade: "O grupo é famoso por integrar inteligência artificial e avatares virtuais nas performances."
   },
   {
-    id: 41, nome: "CRAZY", artista: "LE SSERAFIM", ano: 2025, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/M0VV2sb.jpeg", link: "https://www.youtube.com/watch?v=n6B5gQXlB-0&list=RDn6B5gQXlB-0&start_radio=1&pp=ygUFY3JhenmgBwE%3D",
+    id: 41, nome: "Whiplash", artista: "aespa", ano: 2025, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/vxNtUfy.jpeg", link: "https://www.youtube.com/watch?v=jWQx2f-CErU&list=RDjWQx2f-CErU&start_radio=1&pp=ygUHV0hJUExBU6AHAQ%3D%3D",
     curiosidade: "Consolidaram a imagem de mulheres fortes, desafiando os padrões típicos dos ídols."
   },
   {
