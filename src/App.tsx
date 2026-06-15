@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { musicData, type Musica } from './data/musicData';
 import dacingGif from './assets/dacing.gif';
+import iconePage from './assets/icon.ico';
 
 function App() {
   const [generoSelecionado, setGeneroSelecionado] = useState('');
@@ -9,6 +10,15 @@ function App() {
   const [conectado, setConectado] = useState(true);
   const [musicasAleatorias, setMusicasAleatorias] = useState<Musica[]>(() => [...musicData].sort(() => Math.random() - 0.5));
   const listaGeneros = Array.from(new Set(musicData.map((musica) => musica.genero)));
+
+  useEffect(() => {
+    document.title = 'MusicEra';
+
+    const favicon = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
+    if (favicon) {
+      favicon.href = iconePage;
+    }
+  }, []);
 
   let musicasFiltradas = generoSelecionado === '' ? musicasAleatorias : musicData.filter((musica) => musica.genero === generoSelecionado);
 
