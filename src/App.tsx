@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { musicData, type Musica } from './data/musicData';
 import dacingGif from './assets/dacing.gif';
 import iconePage from './assets/icon.ico';
@@ -8,9 +8,9 @@ const StarRating = () => {
   const [hover, setHover] = useState(0);
 
   return (
-    <div 
-      className="d-flex gap-1 mb-2 mt-1" 
-      onClick={(e) => e.stopPropagation()} 
+    <div
+      className="d-flex gap-1 mb-2 mt-1"
+      onClick={(e) => e.stopPropagation()}
     >
       {[1, 2, 3, 4, 5].map((star) => {
         const isAtivo = star <= (hover || rating);
@@ -26,8 +26,8 @@ const StarRating = () => {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            style={{ 
-              cursor: "pointer", 
+            style={{
+              cursor: "pointer",
               transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
               transform: star <= hover ? "scale(1.15)" : "scale(1)",
               filter: isAtivo ? "drop-shadow(0 0 5px rgba(251, 191, 36, 0.5))" : "none"
@@ -51,6 +51,15 @@ function App() {
   const [conectado, setConectado] = useState(true);
   const [musicasAleatorias, setMusicasAleatorias] = useState<Musica[]>(() => [...musicData].sort(() => Math.random() - 0.5));
   const listaGeneros = Array.from(new Set(musicData.map((musica) => musica.genero)));
+
+  const [mensagemAviso, setMensagemAviso] = useState<string | null>(null);
+  const avisoTimeoutRef = useRef<number | null>(null);
+
+  const mostrarAviso = (mensagem: string) => {
+    setMensagemAviso(mensagem);
+    if (avisoTimeoutRef.current) clearTimeout(avisoTimeoutRef.current);
+    avisoTimeoutRef.current = window.setTimeout(() => setMensagemAviso(null), 3000);
+  };
 
   useEffect(() => {
     document.title = 'MusicEra';
@@ -77,9 +86,73 @@ function App() {
 
   return (
     <div className="container-fluid min-vh-100 pb-5" style={{ backgroundColor: 'var(--cor-fundo)' }}>
+      {mensagemAviso && (
+        <div
+          className="position-fixed start-50 mt-4 p-3 rounded-pill shadow-lg d-flex align-items-center gap-2"
+          style={{
+            zIndex: 9999,
+            backgroundColor: 'rgba(168, 85, 247, 0.95)',
+            backdropFilter: 'blur(10px)',
+            color: '#fff',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            animation: 'animacaoAviso 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            whiteSpace: 'nowrap',
+            maxWidth: '90vw'
+          }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span className="fw-medium text-truncate" style={{ fontSize: '0.95rem' }}>{mensagemAviso}</span>
+        </div>
+      )}
+      <style>
+        {`
+          :root {
+            --tamanho-linha-pc: 335px;  
+            --tamanho-linha-cell: 250px; 
+          }
+          .linha-decorativa {
+            width: var(--tamanho-linha-pc);
+            max-width: 90%;
+          }
+          .texto-descricao {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            max-width: 520px;
+            line-height: 1.5;
+          }
+          @media (max-width: 575.98px) {
+            .linha-decorativa {
+              width: var(--tamanho-linha-cell) !important;
+            }
+            .texto-descricao {
+              font-size: 0.95rem !important;
+              padding: 0 1rem;
+            }
+            .titulo-musica {
+              font-size: 0.95rem !important;
+            }
+            .artista-musica {
+              font-size: 0.85rem !important;
+            }
+            .etiqueta-genero, .ano-lancamento {
+              font-size: 0.7rem !important;
+            }
+          }
+          @keyframes animacaoAviso {
+            from { opacity: 0; transform: translate(-50%, -20px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+          }
+        `}
+      </style>
 
       <header className="text-center pt-5 pb-4 position-relative">
-        {/* Área de Configurações no canto superior esquerdo */}
+
         <div className="position-absolute top-0 start-0 mt-2 mt-md-3 ms-2 ms-md-4">
           <button
             className="btn btn-link p-2 border-0 shadow-none"
@@ -108,10 +181,10 @@ function App() {
           </button>
         </div>
 
-        {/* Área Social e de Login no canto superior direito */}
+
         <div className="position-absolute top-0 end-0 mt-3 me-4 d-flex align-items-center gap-3" style={{ zIndex: 10 }}>
 
-          {/* Campo de Busca de Amigos (aparece apenas se estiver conectado) */}
+
           {conectado && (
             <div className="position-relative d-none d-md-block">
               <style>
@@ -165,7 +238,10 @@ function App() {
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
             }}
-            onClick={() => setConectado(!conectado)}
+            onClick={() => {
+              mostrarAviso("Em breve: Sistema de login e perfis!");
+              setConectado(!conectado);
+            }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             <span className="fw-medium d-none d-sm-inline">{conectado ? 'Felipe Marques' : 'Fazer Login'}</span>
@@ -178,9 +254,12 @@ function App() {
             MusicEra
           </h1>
         </div>
-        <div className="mx-auto" style={{ width: '335px', maxWidth: '90%', height: '3px', backgroundColor: '#c8a2c8', borderRadius: '2px', marginTop: '-0px', boxShadow: '0 3px 8px rgba(200, 162, 200, 0.5)' }}></div>
-        <p className="lead mt-3" style={{ color: 'var(--cor-texto-suave)' }}>
-          Registre e explore os sons que marcaram cada fase da sua vida.       </p>
+        <div className="mx-auto linha-decorativa" style={{ height: '3px', backgroundColor: '#c8a2c8', borderRadius: '2px', marginTop: '-0px', boxShadow: '0 3px 8px rgba(200, 162, 200, 0.5)' }}></div>
+        <div className="mt-3 d-flex flex-column align-items-center px-3">
+          <p className="texto-descricao mx-auto mb-0 text-center" style={{ color: '#94a3b8' }}>
+            O seu diário para <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>descobrir</strong> novas faixas, <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>avaliar</strong> seus artistas favoritos e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>compartilhar</strong> experiências
+          </p>
+        </div>
       </header>
 
       <main className="container">
@@ -216,6 +295,7 @@ function App() {
             className="btn rounded-pill px-4 py-2 btn-inativo d-flex align-items-center gap-2"
             style={{ borderStyle: 'dashed' }}
             title="Demonstração: Adicionar novo gênero"
+            onClick={() => mostrarAviso("Em breve: Adicionar novos gêneros!")}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
           </button>
@@ -294,7 +374,7 @@ function App() {
 
             {mostrarRegistroMemoria && (
               <div
-                className="mt-4 mx-auto p-2 text-start d-flex align-items-center gap-2"
+                className="mt-4 mx-auto p-2 p-md-3 text-start d-flex flex-column flex-md-row gap-3"
                 style={{
                   maxWidth: '800px',
                   backgroundColor: 'rgba(255, 255, 255, 0.03)',
@@ -308,22 +388,23 @@ function App() {
                   style={{
                     backgroundColor: 'transparent',
                     resize: 'none',
-                    fontSize: '1rem',
+                    fontSize: '0.95rem',
                     lineHeight: '1.5'
                   }}
-                  rows={1}
-                  placeholder="Como essa música marcou a sua vida?..."
+                  rows={2}
+                  placeholder="Como essa música te marcou?"
                 ></textarea>
                 <button
-                  className="btn rounded-pill px-4 shadow-sm"
+                  className="btn rounded-pill px-4 py-2 shadow-sm"
                   style={{
                     backgroundColor: 'var(--cor-texto-claro)',
                     color: 'var(--cor-fundo)',
                     fontSize: '0.85rem',
                     fontWeight: '600',
-                    whiteSpace: 'nowrap'
+                    whiteSpace: 'nowrap',
+                    alignSelf: 'flex-end'
                   }}
-                  onClick={() => alert('Em breve suas memórias serão salvas no seu perfil!')}
+                  onClick={() => mostrarAviso('Em breve: Suas memórias serão salvas no perfil!')}
                 >
                   Salvar
                 </button>
@@ -339,25 +420,51 @@ function App() {
             const linkDoYoutube = musica.link;
 
             return (
-              <div key={index} className="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div key={index} className="col-6 col-sm-6 col-lg-4 col-xl-3">
                 <div
-                  onClick={() => linkDoYoutube ? setMusicaAtiva(musica) : null}
+                  onClick={() => {
+                    if (linkDoYoutube) {
+                      setMusicaAtiva(musica);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className="card h-100 cartao-musica text-decoration-none shadow"
                   title={linkDoYoutube ? "Clique para ouvir a música" : "Música sem link"}
                   style={{ cursor: linkDoYoutube ? 'pointer' : 'default' }}
                 >
 
-                  <div className="espaco-imagem d-flex align-items-center justify-content-center">
+                  <div className="espaco-imagem position-relative overflow-hidden">
                     {imagemDaMusica && (
                       <img src={imagemDaMusica} alt={tituloDaMusica} className="imagem-cartao" />
+                    )}
+                    {linkDoYoutube && (
+                      <div
+                        className="position-absolute d-flex align-items-center justify-content-center shadow-sm"
+                        style={{
+                          bottom: '10px',
+                          right: '10px',
+                          width: '36px',
+                          height: '36px',
+                          backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                          backdropFilter: 'blur(8px)',
+                          WebkitBackdropFilter: 'blur(8px)',
+                          border: '1px solid rgba(255, 255, 255, 0.3)',
+                          borderRadius: '50%',
+                          color: '#fff',
+                        }}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '3px' }}>
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </div>
                     )}
                   </div>
 
                   <div className="card-body d-flex flex-column p-0 pt-3">
-                    <h5 className="card-title fw-bold text-truncate mb-1" style={{ color: 'var(--cor-texto-claro)' }} title={tituloDaMusica}>
+                    <h5 className="card-title fw-bold text-truncate mb-1 titulo-musica" style={{ color: 'var(--cor-texto-claro)' }} title={tituloDaMusica}>
                       {tituloDaMusica}
                     </h5>
-                    <p className="card-text text-truncate mb-2" style={{ color: 'var(--cor-primaria)' }} title={musica.artista}>
+                    <p className="card-text text-truncate mb-2 artista-musica" style={{ color: 'var(--cor-primaria)' }} title={musica.artista}>
                       {musica.artista}
                     </p>
 
@@ -378,7 +485,6 @@ function App() {
           })}
         </div>
 
-        {/* Botão Flutuante de Adicionar Música */}
         <button
           className="btn rounded-circle shadow-lg d-flex align-items-center justify-content-center position-fixed"
           style={{
@@ -401,7 +507,7 @@ function App() {
             e.currentTarget.style.transform = 'scale(1)';
             e.currentTarget.style.backgroundColor = 'rgba(168, 85, 247, 0.2)';
           }}
-          onClick={() => alert('Em breve: Formulário para adicionar nova música!')}
+          onClick={() => mostrarAviso('Em breve:  adicionar suas músicas!')}
           title="Adicionar Música"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
