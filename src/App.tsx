@@ -80,6 +80,8 @@ function App() {
       videoId = url.split('v=')[1]?.split('&')[0];
     } else if (url.includes('youtu.be/')) {
       videoId = url.split('youtu.be/')[1]?.split('?')[0];
+    } else if (url.includes('embed/')) {
+      videoId = url.split('embed/')[1]?.split('?')[0];
     }
     return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : url;
   };
@@ -257,7 +259,7 @@ function App() {
         <div className="mx-auto linha-decorativa" style={{ height: '3px', backgroundColor: '#c8a2c8', borderRadius: '2px', marginTop: '-0px', boxShadow: '0 3px 8px rgba(200, 162, 200, 0.5)' }}></div>
         <div className="mt-3 d-flex flex-column align-items-center px-3">
           <p className="texto-descricao mx-auto mb-0 text-center" style={{ color: '#94a3b8' }}>
-            O seu diário para <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>descobrir</strong> e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>ouvir</strong> novas faixas, <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>avaliar</strong> seus artistas favoritos e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>compartilhar</strong>
+            O seu diário para <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>descobrir</strong> e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>ouvir</strong> novas faixas, <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>avaliar</strong> seus artistas favoritos e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>compartilhar</strong>git
           </p>
         </div>
       </header>
@@ -364,9 +366,10 @@ function App() {
             <div className="mx-auto shadow-lg" style={{ maxWidth: '1200px', borderRadius: '16px', overflow: 'hidden' }}>
               <div className="ratio ratio-16x9">
                 <iframe
+                  key={musicaAtiva.id}
                   src={obterLinkEmbed(musicaAtiva.link)}
                   title="Player do YouTube"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
               </div>
