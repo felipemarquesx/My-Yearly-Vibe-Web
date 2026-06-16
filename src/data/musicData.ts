@@ -14,23 +14,32 @@ export interface Musica {
 export const musicData: Musica[] = [
   // ==================== FUNK ====================
   {
-    id: 43, nome: "Mc Sapão", artista: " Mc sapão", ano: 2006, epoca: "Anos 2010", genero: "Funk", tipoArtista: "Homem", urlImagem: "https://i.imgur.com/nbYxqLo.jpeg", link: "https://www.youtube.com/watch?v=JtWJYmHDDi8&list=RDJtWJYmHDDi8&start_radio=1&pp=ygUQZXUgdG8gdHJhbnF1aWxhb6AHAQ%3D%3D",
+    id: 43, nome: "Eu to tranquilão", artista: " Mc sapão", ano: 2006, epoca: "Anos 2010", genero: "Funk", tipoArtista: "Homem", urlImagem: "https://i.imgur.com/nbYxqLo.jpeg", link: "https://www.youtube.com/watch?v=JtWJYmHDDi8&list=RDJtWJYmHDDi8&start_radio=1&pp=ygUQZXUgdG8gdHJhbnF1aWxhb6AHAQ%3D%3D",
     curiosidade: "Música adicionada como placeholder para o ano de 2019."
   },
 
 
   // ==================== MPB ====================
   {
-    id: 11, nome: "Metralhadora", artista: "Banda Vingadora", ano: 2015, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/neCHgpb.jpeg", link: "https://www.youtube.com/watch?v=YzCoZGsod0c&list=RDYzCoZGsod0c&start_radio=1&pp=ygUMTUVUUkFMSEFET1JBoAcB",
-    curiosidade: "Liniker fez história no Grammy Latino com seu estilo que mistura MPB e Soul."
+    id: 11, nome: "Toda Forma de Amor", artista: "Lulu santos", ano: 1998, epoca: "Anos 90", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/GWoX6RP.png", link: "'https://www.youtube.com/watch?v=wU6hX4EJlRM&list=RDwU6hX4EJlRM&start_radio=1&pp=ygUSdG9kYSBmb3JtYSBkZSBhbW9yoAcB",
+    curiosidade: "A música 'Toda Forma de Amor' de Lulu Santos é um clássico da MPB, lançada em 1988, que celebra a diversidade do amor e se tornou um hino atemporal para todas as formas de relacionamento."
+  },
+  {
+    id: 11, nome: "Eva", artista: "Banda Eva", ano: 1999, epoca: "Anos 90", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/ZLXo31f.png", link: "https://www.youtube.com/watch?v=8cS9Zmm5FiU&list=RD8cS9Zmm5FiU&start_radio=1&pp=ygUJYmFuZGEgZXZhoAcB0gcJCT4LAYcqIYzv",
+    curiosidade: "A música 'Eva' da Banda Eva é um clássico do axé music, lançada em 1999, que se tornou um hino de Carnaval e é lembrada por sua energia contagiante e letra marcante."
   },
   {
     id: 11, nome: "Superman", artista: "LevaNóiz", ano: 2011, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/Zq78GQR.jpeg", link: "https://www.youtube.com/watch?v=1RfA2sEXPIA&list=RD1RfA2sEXPIA&start_radio=1&pp=ygUVZm9nZSBtdWxoZXIgbWFyYXZpbGhhoAcB",
-    curiosidade: "Liniker fez história no Grammy Latino com seu estilo que mistura MPB e Soul."
+    curiosidade: "A música 'Superman' da LevaNóiz é uma homenagem ao herói e é cantada com entusiasmo por seus fãs."
   },
   {
+    id: 11, nome: "Metralhadora", artista: "Banda Vingadora", ano: 2015, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Banda", urlImagem: "https://i.imgur.com/neCHgpb.jpeg", link: "https://www.youtube.com/watch?v=YzCoZGsod0c&list=RDYzCoZGsod0c&start_radio=1&pp=ygUMTUVUUkFMSEFET1JBoAcB",
+    curiosidade: "A música 'Metralhadora' da Banda Vingadora é conhecida por seu ritmo energético e letras que abordam temas sociais."
+  },
+
+  {
     id: 11, nome: "Acontecimentos", artista: "Marisa Monte", ano: 2017, epoca: "Anos 2020", genero: "MPB", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/vwQKmM8.jpeg", link: "https://www.youtube.com/watch?v=O3WOEOAqsG4&list=RDO3WOEOAqsG4&start_radio=1&pp=ygUNQWNvbnRlY2ltZW50b6AHAQ%3D%3D",
-    curiosidade: "Liniker fez história no Grammy Latino com seu estilo que mistura MPB e Soul."
+    curiosidade: "A música 'Acontecimentos' de Marisa Monte é uma homenagem aos eventos da vida e é cantada com profunda emoção."
   },
   {
 
@@ -52,6 +61,8 @@ export const musicData: Musica[] = [
   },
 
   // ==================== POP ====================
+
+
   {
     id: 47, nome: "7 rings", artista: "Ariana Grande", ano: 2019, epoca: "Anos 2010", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/BAPLERL.png", link: "https://www.youtube.com/watch?v=QYh6mYIJG2Y&list=RDQYh6mYIJG2Y&start_radio=1&pp=ygUHNyBSSU5HU6AHAQ%3D%3D",
     curiosidade: "Música adicionada como placeholder para o ano de 2019."
@@ -75,6 +86,10 @@ export const musicData: Musica[] = [
   {
     id: 33, nome: "Espresso", artista: "Sabrina Carpenter", ano: 2024, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/juCGV31.jpeg", link: "https://www.youtube.com/watch?v=eVli-tstM5E&list=RDeVli-tstM5E&start_radio=1&pp=ygUHZXNwcmVzb6AHAQ%3D%3D",
     curiosidade: "A batida viciante transformou Sabrina de ex-estrela teen em ícone pop absoluto."
+  },
+  {
+    id: 47, nome: "Saturn", artista: "SZA", ano: 2024, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/qGS5eRK.jpeg", link: "https://www.youtube.com/watch?v=NxVJbDcdznc&list=RDNxVJbDcdznc&start_radio=1&pp=ygUPc2F0dXJuIGxpdmUgc3phoAcB",
+    curiosidade: "SZA é conhecida por sua voz única e letras introspectivas, e 'Saturn' é uma das faixas mais aclamadas de seu álbum 'Ctrl', lançado em 2017, que solidificou sua posição como uma das principais artistas do R&B contemporâneo."
   },
   {
     id: 34, nome: "Gnarly", artista: "Katseye", ano: 2025, epoca: "Anos 2020", genero: "Pop", tipoArtista: "Mulher", urlImagem: "https://i.imgur.com/4oFeFT7.jpeg", link: "https://www.youtube.com/watch?v=PkMKJEkE8Mo&list=RDPkMKJEkE8Mo&start_radio=1",
@@ -109,6 +124,10 @@ export const musicData: Musica[] = [
   {
     id: 40, nome: "Magnetic", artista: "ILLIT", ano: 2024, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/tCzpBQJ.jpeg", link: "https://www.youtube.com/watch?v=Vk5-c_v4gMU&list=RDVk5-c_v4gMU&start_radio=1&pp=0gcJCfMCOCosWNin",
     curiosidade: "O grupo é famoso por integrar inteligência artificial e avatares virtuais nas performances."
+  },
+  {
+    id: 36, nome: "Lips Hips Kiss", artista: "KISS OF LIFE", ano: 2025, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/zDoyxgL.jpeg", link: "https://www.youtube.com/watch?v=52IyDIMyejQ&list=RD52IyDIMyejQ&start_radio=1",
+    curiosidade: "."
   },
   {
     id: 41, nome: "Whiplash", artista: "aespa", ano: 2025, epoca: "Anos 2020", genero: "K-Pop", tipoArtista: "Girlgroup", urlImagem: "https://i.imgur.com/vxNtUfy.jpeg", link: "https://www.youtube.com/watch?v=jWQx2f-CErU&list=RDjWQx2f-CErU&start_radio=1&pp=ygUHV0hJUExBU6AHAQ%3D%3D",
