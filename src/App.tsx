@@ -257,7 +257,7 @@ function App() {
         <div className="mx-auto linha-decorativa" style={{ height: '3px', backgroundColor: '#c8a2c8', borderRadius: '2px', marginTop: '-0px', boxShadow: '0 3px 8px rgba(200, 162, 200, 0.5)' }}></div>
         <div className="mt-3 d-flex flex-column align-items-center px-3">
           <p className="texto-descricao mx-auto mb-0 text-center" style={{ color: '#94a3b8' }}>
-            O seu diário para <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>descobrir</strong> novas faixas, <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>avaliar</strong> seus artistas favoritos e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>compartilhar</strong> experiências
+            O seu diário para <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>descobrir</strong> e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>ouvir</strong> novas faixas, <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>avaliar</strong> seus artistas favoritos e <strong style={{ color: '#e2e8f0', fontWeight: 500 }}>compartilhar</strong>
           </p>
         </div>
       </header>
